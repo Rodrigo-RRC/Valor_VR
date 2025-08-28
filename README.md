@@ -81,3 +81,4 @@ Com evolução para bancos dinâmicos, a solução se torna aplicável em **ambi
 
 > Projeto desenvolvido para o **I2A2 – Criando Agentes Inteligentes com IA Generativa**.  
 Mostra na prática como **dados comuns podem se transformar em inteligência de negócios** usando IA. 🚀
+
