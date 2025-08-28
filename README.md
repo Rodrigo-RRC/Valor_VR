@@ -72,11 +72,14 @@ Este projeto demonstra como a **IA Generativa** e **bancos vetoriais** podem agr
 Mesmo partindo de **planilhas estáticas**, conseguimos construir uma solução que **simula cenários reais de empresas de benefícios (VR/VA)**.  
 Com evolução para bancos dinâmicos, a solução se torna aplicável em **ambientes empresariais de grande escala**.
 
-<p align="center">
-  <a href="https://rodrigo-rrc.github.io/Projetos_IA/" target="_blank">
-    <img src="https://img.shields.io/badge/⬅️ Voltar para o índice interativo-blue?style=for-the-badge" alt="Voltar para o índice interativo"/>
+<!-- A) Botão real (sem shields.io) -->
+<p style="text-align:center;">
+  <a href="https://rodrigo-rrc.github.io/Projetos_IA/" target="_self"
+     style="display:inline-block;padding:12px 18px;background:#1f6feb;color:#fff;
+            text-decoration:none;border-radius:10px;font-weight:800;letter-spacing:.3px;
+            text-transform:uppercase;">
+    ⬅ Voltar para o índice interativo
   </a>
 </p>
-
 > Projeto desenvolvido para o **I2A2 – Criando Agentes Inteligentes com IA Generativa**.  
 Mostra na prática como **dados comuns podem se transformar em inteligência de negócios** usando IA. 🚀
