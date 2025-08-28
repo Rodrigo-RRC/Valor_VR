@@ -1,0 +1,26 @@
+# Ambientes virtuais
+.venv/
+
+# Cache do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Relatórios locais
+_reports/
+
+# Pasta de entrega (não versionar)
+Entrega - Desafio 4/
+
+# Arquivo ZIP de entrega
+Entrega-Desafio4.zip
+*.zip
+
+# Arquivos de sistema/IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Arquivo de variáveis locais (usar .env.example no lugar)
+.env

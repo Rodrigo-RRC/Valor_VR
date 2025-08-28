@@ -1,0 +1,68 @@
+# regras.yml
+
+metadata:
+  nome: "Desafio 4 – VR"
+  versao: "1.1"
+  ultima_atualizacao: "2025-08-26"
+
+regras_negocio:
+  desligamento:
+    descricao: "Colaboradores desligados até o dia 15 não recebem VR no mês corrente."
+    dia_corte: 15
+  rateio:
+    descricao: "Rateio 80/20 entre Matriz (80%) e Demais (20%) quando aplicável."
+    matriz: 0.8
+    demais: 0.2
+  exclusoes:
+    descricao: "Lista de CPFs/IDs/Unidades a excluir integralmente do pagamento de VR."
+    exemplos:
+      - "CPF: 000.000.000-00"
+      - "ID: 12345"
+  validacoes:
+    - "Sem valores negativos de VR_COLAB"
+
+layout:
+  descricao: "Layout final para envio à operadora."
+  # Estas são as COLUNAS FINAIS desejadas no arquivo de exportação:
+  export_columns:
+    - "Matricula"
+    - "Admissão"
+    - "Sindicato do Colaborador"
+    - "Competência"
+    - "Dias"
+    - "VALOR DIÁRIO VR"
+    - "TOTAL"
+    - "Custo empresa"
+    - "Desconto profissional"
+    - "OBS GERAL"
+
+  # MAPEAMENTO de colunas: origem (RESULT) -> destino (LAYOUT)
+  # Se a origem não existir, usa 'default' (ou vazio).
+  mapping:
+    "Matricula": {from: "MATRICULA"}
+    "Admissão": {from: "ADMISSAO"}
+    "Sindicato do Colaborador": {from: "SINDICATO"}
+    "Competência": {default: ""}             # não existe no RESULT — será "" ou o mês informado na UI
+    "Dias": {from: "DIAS_ELEGIVEIS"}         # escolha feita com base no seu RESULT
+    "VALOR DIÁRIO VR": {from: "VALOR_UNITARIO"}
+    "TOTAL": {from: "VR_COLAB"}
+    "Custo empresa": {from: "VR_EMPRESA"}
+    "Desconto profissional": {from: "VR_PROFISSIONAL"}
+    "OBS GERAL": {default: ""}
+
+  # Para validação: as fontes mínimas que esperamos EXISTIR no RESULT
+  required_sources:
+    - "MATRICULA"
+    - "SINDICATO"
+    - "DIAS_ELEGIVEIS"
+    - "VALOR_UNITARIO"
+    - "VR_COLAB"
+    - "VR_EMPRESA"
+    - "VR_PROFISSIONAL"
+    - "ADMISSAO"
+
+  arquivo_export: "./data/ETL_OK/VR_MENSAL_EXPORT.xlsx"
+
+arquivos:
+  result_xlsx: "./data/ETL_OK/VR_MENSAL_RESULT.xlsx"
+  layout_xlsx: "./data/ETL_OK/VR_MENSAL_LAYOUT.xlsx"
